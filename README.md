@@ -1,1 +1,1 @@
-Miscellaneous stuff I wanted to hav available from my editor
+Miscellaneous stuff I wanted to have available from my editor
