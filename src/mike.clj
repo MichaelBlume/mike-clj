@@ -1,5 +1,6 @@
 (ns mike
   (:require [clojure.test :refer [run-tests]]
+            [clojure.tools.namespace.repl :refer [refresh]]
             [cemerick.pomegranate :refer [add-dependencies]]))
 
 ; Stuff I always want
@@ -18,6 +19,7 @@
   (filter has-tests (all-ns)))
 
 (defn run-all-tests []
+  (refresh)
   (apply run-tests (all-test-ns)))
 
 (defn add-dep* [d]
