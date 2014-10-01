@@ -22,11 +22,15 @@
   (refresh)
   (apply run-tests (all-test-ns)))
 
+(def repos
+  (merge
+    cemerick.pomegranate.aether/maven-central
+    {"clojars" "http://clojars.org/repo"}))
+
 (defn add-dep* [d]
   (add-dependencies
     :coordinates [d]
-    :repositories (merge cemerick.pomegranate.aether/maven-central
-                         {"clojars" "http://clojars.org/repo"})))
+    :repositories repos))
 
 (defmacro add-dep [d]
   `(add-dep* (quote ~d)))
