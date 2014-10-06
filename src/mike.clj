@@ -19,8 +19,10 @@
   (filter has-tests (all-ns)))
 
 (defn run-all-tests []
-  (refresh)
-  (apply run-tests (all-test-ns)))
+  (let [ref-result (refresh)]
+    (if (= ref-result :ok)
+      (apply run-tests (all-test-ns))
+      (throw ref-result))))
 
 (def repos
   (merge
