@@ -36,3 +36,9 @@
 
 (defmacro add-dep [d]
   `(add-dep* (quote ~d)))
+
+(defmacro pr-err [& forms]
+  `(try ~@forms
+     (catch Throwable t#
+       (.printStackTrace t# *out*)
+       (throw t#))))
