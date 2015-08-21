@@ -1,4 +1,4 @@
-(ns mike
+(ns editor-fns
   (:require [clojure.test :refer [run-tests]]
             [clojure.tools.namespace.repl :refer [refresh]]
             [cemerick.pomegranate :refer [add-dependencies]]))
